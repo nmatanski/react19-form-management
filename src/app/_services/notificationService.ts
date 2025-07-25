@@ -1,3 +1,5 @@
+'use server';
+
 import { Notification } from '../_types/Notification.type';
 
 export const getNotifications = (): Promise<Notification[]> => {
