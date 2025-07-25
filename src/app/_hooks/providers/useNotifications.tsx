@@ -5,7 +5,7 @@ export const useNotifications = () => {
   const context = use(NotificationsContext);
 
   if (!context) {
-    throw new Error('ThemeSwitcher must be used within a ThemeProvider');
+    throw new Error('Notifications must be used within a NotificationsProvider');
   }
 
   return context;

@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { useNotifications } from './providers/useNotifications';
 import { Notification } from '../_types/Notification.type';
 
-// Simulate fetch with delay
 const getMockInitialNotifications = async (): Promise<Notification[]> => {
   await new Promise(res => setTimeout(res, 2000));
   return Array.from({ length: 10 }, (_, i) => ({
