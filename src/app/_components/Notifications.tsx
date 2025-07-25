@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { BellIcon, CheckIcon } from 'lucide-react'
-import { Button } from './ui/button'
-import { useNotifications } from '../_hooks/providers/useNotifications'
+import { BellIcon, CheckIcon } from 'lucide-react';
+import { Button } from './ui/button';
+import { useNotifications } from '../_hooks/providers/useNotifications';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,15 +10,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from './ui/dropdown-menu'
-import { useMockNotifications } from '../_hooks/useMockNotifications'
+} from './ui/dropdown-menu';
+import { useMockNotifications } from '../_hooks/useMockNotifications';
 
 export const Notifications = () => {
-  const { notifications, markNotificationAsRead, markAllNotificationsAsRead } = useNotifications()
+  const { notifications, markNotificationAsRead, markAllNotificationsAsRead } = useNotifications();
 
-  useMockNotifications()
+  useMockNotifications();
 
-  const unreadCount = notifications.filter(notification => !notification.isRead).length
+  const unreadCount = notifications.filter(notification => !notification.isRead).length;
 
   return (
     <DropdownMenu>
@@ -76,8 +76,8 @@ export const Notifications = () => {
                   <button
                     className="text-muted-foreground hover:text-foreground transition p-1"
                     onClick={e => {
-                      e.stopPropagation()
-                      markNotificationAsRead(notification.id)
+                      e.stopPropagation();
+                      markNotificationAsRead(notification.id);
                     }}>
                     <CheckIcon className="h-4 w-4" />
                   </button>
@@ -88,5 +88,5 @@ export const Notifications = () => {
         )}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};

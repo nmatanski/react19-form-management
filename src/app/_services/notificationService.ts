@@ -1,4 +1,4 @@
-import { Notification } from '../_types/Notification.type'
+import { Notification } from '../_types/Notification.type';
 
 export const getNotifications = (): Promise<Notification[]> => {
   return new Promise(resolve => {
@@ -64,7 +64,7 @@ export const getNotifications = (): Promise<Notification[]> => {
           description: 'This is Notification 10.',
           isRead: true
         }
-      ])
-    }, 2000)
-  })
-}
+      ]);
+    }, 2000);
+  });
+};

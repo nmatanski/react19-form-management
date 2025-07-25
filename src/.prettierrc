@@ -1,8 +1,11 @@
 {
   "printWidth": 100,
+  "semi": true,
+  "proseWrap": "preserve",
   "arrowParens": "avoid",
   "trailingComma": "none",
   "singleQuote": true,
   "bracketSameLine": true,
-  "bracketSpacing": true
+  "bracketSpacing": true,
+  "useEditorConfig": true
 }

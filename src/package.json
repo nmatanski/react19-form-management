@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier . --write --no-semi --prose-wrap preserve --print-width 100 --editorconfig",
+    "format": "prettier . --write",
     "lint:fix": "npm run format && next lint --fix"
   },
   "dependencies": {
