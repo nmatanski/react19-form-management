@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "npx prettier . --write --editorconfig && next lint --fix"
+    "lint:fix": "npx prettier . --write --no-semi --prose-wrap preserve --print-width 100 --editorconfig && next lint --fix"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.15",
