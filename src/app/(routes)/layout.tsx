@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { PropsWithChildren } from "react";
 import { ThemeToggle } from "../_components/ThemeToggle";
 import { ThemeProvider } from "../_providers/ThemeProvider";
+import { NotificationsProvider } from "../_providers/NotificationsProvider";
+import { Notifications } from "../_components/Notifications";
 import "../_styles/globals.css";
 
 const geistSans = Geist({
@@ -34,13 +36,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="absolute top-3 right-3 z-50 opacity-67 hover:opacity-100 transition-opacity">
-            <ThemeToggle />
-          </div>
+          <NotificationsProvider>
+            <div className="absolute top-3 right-3 z-50 flex items-center gap-2">
+              <Notifications />
 
-          <div className="items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20">
-            {children}
-          </div>
+              <ThemeToggle />
+            </div>
+
+            <div className="items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20">
+              {children}
+            </div>
+          </NotificationsProvider>
         </ThemeProvider>
       </body>
     </html>
