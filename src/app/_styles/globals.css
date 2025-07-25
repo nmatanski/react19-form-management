@@ -42,7 +42,7 @@
 
   /* TW custom vars */
   --shadow-cyan: var(--tw-glow-cyan);
-  --shadow-pink: var(--tw-glow-pink);  
+  --shadow-pink: var(--tw-glow-pink);
 }
 
 :root {

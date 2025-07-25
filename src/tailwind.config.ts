@@ -1,18 +1,16 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-    content: [
-        './app/**/*.{ts,tsx}'
-    ],
-    theme: {
-        extend: {
-            boxShadow: {
-                'cyan-glow': 'var(--shadow-cyan)',
-                'pink-glow': 'var(--shadow-pink)'
-            }
-        },
+  content: ["./app/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      boxShadow: {
+        "cyan-glow": "var(--shadow-cyan)",
+        "pink-glow": "var(--shadow-pink)",
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 };
 
 export default config;
