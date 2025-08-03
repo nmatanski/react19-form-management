@@ -2,6 +2,7 @@
 
 import { createContext, PropsWithChildren, useState } from 'react';
 import { Notification } from '../_types/Notification.type';
+import { markNotificationByIdAsRead } from '../_services/notificationService';
 
 type NotificationsContextProps = {
   notifications: Notification[];
@@ -25,15 +26,20 @@ export const NotificationsProvider = ({ children }: PropsWithChildren) => {
   const addNotification = (notification: Notification) =>
     setNotifications(prev => [notification, ...prev]);
 
-  const markNotificationAsRead = (id: string) =>
+  const markNotificationAsRead = async (id: string) => {
+    await markNotificationByIdAsRead(id);
     setNotifications(prev =>
       sortNotifications(prev.map(n => (n.id === id ? { ...n, isRead: true } : n)))
     );
+  };
 
-  const markAllNotificationsAsRead = () =>
+  const markAllNotificationsAsRead = async () => {
+    const ids = notifications.map(({ id }) => id);
+    await Promise.all(ids.map(id => markNotificationByIdAsRead(id)));
     setNotifications(prev =>
       sortNotifications(prev.map(n => (n.isRead ? n : { ...n, isRead: true })))
     );
+  };
 
   return (
     <NotificationsContext

@@ -21,3 +21,9 @@ export const getNewNotification = async (): Promise<Notification> => {
     isRead: false
   };
 };
+
+export const markNotificationByIdAsRead = async (id: string) => {
+  await new Promise(res => setTimeout(res, 200));
+  console.log('markNotificationAsRead', id);
+  return;
+};
