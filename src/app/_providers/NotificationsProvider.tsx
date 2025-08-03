@@ -19,8 +19,8 @@ export const NotificationsProvider = ({ children }: PropsWithChildren) => {
   const sortNotifications = (notifications: Notification[]) =>
     [...notifications].sort((a, b) => Number(a.isRead) - Number(b.isRead));
 
-  const setInitialNotifications = (initial: Notification[]) =>
-    setNotifications(sortNotifications(initial));
+  const setInitialNotifications = (initialNotifications: Notification[]) =>
+    setNotifications(sortNotifications(initialNotifications));
 
   const addNotification = (notification: Notification) =>
     setNotifications(prev => [notification, ...prev]);
